@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel><title><![CDATA[Matheus Gustavo]]></title><description><![CDATA[Aprendendo e compartilhando conhecimento em desenvolvimento de software.]]></description><link>https://blog.matheusgustavo.com.br/</link><image><url>https://blog.matheusgustavo.com.br/favicon.png</url><title>Matheus Gustavo</title><link>https://blog.matheusgustavo.com.br/</link></image><generator>Ghost 4.7</generator><lastBuildDate>Thu, 21 Jul 2022 16:45:27 GMT</lastBuildDate><atom:link href="https://blog.matheusgustavo.com.br/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Cloud Design Patterns - Segurança]]></title><description><![CDATA[A segurança fornece garantias de confidencialidade, integridade e disponibilidade contra ataques maliciosos em sistemas de informação]]></description><link>https://blog.matheusgustavo.com.br/cloud-design-patterns-seguranca/</link><guid isPermaLink="false">62d97a0163efb8000179466d</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 21 Jul 2022 16:10:29 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ul>
+<li>Federated Identity
+<ul>
+<li>Delegue a autentica&#xE7;&#xE3;o a um provedor de identidade externo.</li>
+</ul>
+</li>
+<li>Gatekeeper
+<ul>
+<li>Proteja aplicativos e servi&#xE7;os usando uma inst&#xE2;ncia de host dedicada que atua como um intermedi&#xE1;rio entre os clientes e o aplicativo ou servi&#xE7;o, valida e limpa solicita&#xE7;&#xF5;es e passa solicita&#xE7;&#xF5;es e dados entre eles.</li>
+</ul>
+</li>
+<li>Valet Key
+<ul>
+<li>Use um token ou chave que forne&#xE7;a aos clientes acesso direto restrito a um recurso ou servi&#xE7;o espec&#xED;fico.</li>
+</ul>
+</li>
+</ul>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/reliability-patterns" target="_blank">Reliability patterns</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Cloud Design Patterns - Confiabilidade]]></title><description><![CDATA[A disponibilidade é medida como uma porcentagem do tempo em que um sistema está funcional.]]></description><link>https://blog.matheusgustavo.com.br/untitled/</link><guid isPermaLink="false">62d9763063efb8000179460d</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 21 Jul 2022 16:07:56 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><h2 id="disponibilidade">Disponibilidade</h2>
+<ul>
+<li>
+<p>Deployment Stamps</p>
+<ul>
+<li>Implante v&#xE1;rias c&#xF3;pias independentes de componentes de aplicativos, incluindo armazenamentos de dados.</li>
+</ul>
+</li>
+<li>
+<p>Geodes</p>
+<ul>
+<li>Implante servi&#xE7;os de back-end em um conjunto de n&#xF3;s geogr&#xE1;ficos, cada um dos quais pode atender a qualquer solicita&#xE7;&#xE3;o de cliente em qualquer regi&#xE3;o.</li>
+</ul>
+</li>
+<li>
+<p>Health Endpoint Monitoring</p>
+<ul>
+<li>Implemente verifica&#xE7;&#xF5;es funcionais em um aplicativo que ferramentas externas podem acessar por meio de endpoints expostos em intervalos regulares.</li>
+</ul>
+</li>
+<li>
+<p>Queue-Based Load Leveling</p>
+<ul>
+<li>Use uma fila que atue como um buffer entre uma tarefa e um servi&#xE7;o que ela chama, para suavizar cargas pesadas intermitentes.</li>
+</ul>
+</li>
+<li>
+<p>Throttling</p>
+<ul>
+<li>Controle o consumo de recursos por uma inst&#xE2;ncia de um aplicativo, um locat&#xE1;rio individual ou um servi&#xE7;o inteiro.</li>
+</ul>
+</li>
+<li>
+<p>Bulkhead</p>
+<ul>
+<li>Isole os elementos de um aplicativo em pools para que, se um falhar, os outros continuem funcionando.</li>
+</ul>
+</li>
+<li>
+<p>Circuit Breaker</p>
+<ul>
+<li>Lide com falhas que podem levar um tempo vari&#xE1;vel para serem corrigidas ao se conectar a um servi&#xE7;o ou recurso remoto.</li>
+</ul>
+</li>
+<li>
+<p>Compensating Transaction</p>
+<ul>
+<li>Desfa&#xE7;a o trabalho realizado por uma s&#xE9;rie de etapas, que juntas definem uma opera&#xE7;&#xE3;o eventualmente consistente.</li>
+</ul>
+</li>
+<li>
+<p>Leader Election</p>
+<ul>
+<li>Coordene as a&#xE7;&#xF5;es executadas por uma cole&#xE7;&#xE3;o de inst&#xE2;ncias de tarefas colaborativas em um aplicativo distribu&#xED;do, elegendo uma inst&#xE2;ncia como l&#xED;der que assume a responsabilidade de gerenciar as outras inst&#xE2;ncias.</li>
+</ul>
+</li>
+<li>
+<p>Retry</p>
+<ul>
+<li>Habilite um aplicativo para lidar com falhas tempor&#xE1;rias antecipadas ao tentar se conectar a um servi&#xE7;o ou recurso de rede tentando novamente de forma transparente uma opera&#xE7;&#xE3;o que falhou anteriormente.</li>
+</ul>
+</li>
+<li>
+<p>Scheduler Agent Supervisor</p>
+<ul>
+<li>Coordene um conjunto de a&#xE7;&#xF5;es em um conjunto distribu&#xED;do de servi&#xE7;os e outros recursos remotos.</li>
+</ul>
+</li>
+</ul>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/reliability-patterns" target="_blank">Reliability patterns</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Princípios de Design Arquiteturais.]]></title><description><![CDATA[Princípios de design para tornar seu aplicativo mais escalável, resiliente e gerenciável.]]></description><link>https://blog.matheusgustavo.com.br/principios-de-design-arquiteturais/</link><guid isPermaLink="false">62d9596663efb800017945a4</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 21 Jul 2022 13:58:18 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ul>
+<li>
+<p>Design for self-healing.</p>
+<ul>
+<li>Em um sistema distribu&#xED;do, as falhas acontecem. Projete seu aplicativo para ser autocorretivo quando ocorrerem falhas.</li>
+</ul>
+</li>
+<li>
+<p>Make all things redundant.</p>
+<ul>
+<li>Crie redund&#xE2;ncia em seu aplicativo para evitar pontos &#xFA;nicos de falha.</li>
+</ul>
+</li>
+<li>
+<p>Minimize coordination.</p>
+<ul>
+<li>Minimize a coordena&#xE7;&#xE3;o entre os servi&#xE7;os de aplicativos para obter escalabilidade.</li>
+</ul>
+</li>
+<li>
+<p>Design to scale out.</p>
+<ul>
+<li>Projete seu aplicativo para que ele possa ser dimensionado horizontalmente, adicionando ou removendo novas inst&#xE2;ncias conforme a demanda exigir.</li>
+</ul>
+</li>
+<li>
+<p>Partition around limits.</p>
+<ul>
+<li>Use o particionamento para contornar limites de banco de dados, rede e computa&#xE7;&#xE3;o.</li>
+</ul>
+</li>
+<li>
+<p>Design for operations.</p>
+<ul>
+<li>Projete seu aplicativo para que a equipe de opera&#xE7;&#xF5;es tenha as ferramentas necess&#xE1;rias.</li>
+</ul>
+</li>
+<li>
+<p>Use managed services.</p>
+<ul>
+<li>Quando poss&#xED;vel, use plataforma como servi&#xE7;o (PaaS) em vez de infraestrutura como servi&#xE7;o (IaaS).</li>
+</ul>
+</li>
+<li>
+<p>Use an identity service.</p>
+<ul>
+<li>Use uma plataforma de identidade como servi&#xE7;o (IDaaS) em vez de criar ou operar a sua pr&#xF3;pria.</li>
+</ul>
+</li>
+<li>
+<p>Use the best data store for the job.</p>
+<ul>
+<li>Escolha a tecnologia de armazenamento mais adequada para seus dados e como ela ser&#xE1; usada.</li>
+</ul>
+</li>
+<li>
+<p>Design for evolution.</p>
+<ul>
+<li>Todos os aplicativos bem-sucedidos mudam com o tempo. Um design evolutivo &#xE9; a chave para a inova&#xE7;&#xE3;o cont&#xED;nua.</li>
+</ul>
+</li>
+<li>
+<p>Build for the needs of business.</p>
+<ul>
+<li>Cada decis&#xE3;o de projeto deve ser justificada por um requisito de neg&#xF3;cios.</li>
+</ul>
+</li>
+</ul>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/guide/design-principles/" target="_blank">Design Principles</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Cloud Design Patterns -
+Mensageria]]></title><description><![CDATA[A natureza distribuída dos aplicativos em nuvem requer uma infraestrutura de mensagens que conecte os componentes e serviços]]></description><link>https://blog.matheusgustavo.com.br/cloud-design-patterns-messaging-patterns/</link><guid isPermaLink="false">62d9567163efb80001794550</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 21 Jul 2022 13:44:50 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ul>
+<li>
+<p>Asynchronous Request-Reply</p>
+<ul>
+<li>Separe o processamento de back-end de um host de front-end, onde o processamento de back-end precisa ser ass&#xED;ncrono, mas o front-end ainda precisa de uma resposta clara.</li>
+</ul>
+</li>
+<li>
+<p>Claim Check</p>
+<ul>
+<li>Divida uma mensagem grande em uma verifica&#xE7;&#xE3;o de solicita&#xE7;&#xE3;o e uma carga &#xFA;til para evitar sobrecarregar um barramento de mensagens.</li>
+</ul>
+</li>
+<li>
+<p>Choreography</p>
+<ul>
+<li>Fa&#xE7;a com que cada componente do sistema participe do processo de tomada de decis&#xE3;o sobre o fluxo de trabalho de uma transa&#xE7;&#xE3;o comercial, em vez de depender de um ponto de controle central.</li>
+</ul>
+</li>
+<li>
+<p>Competing Consumers</p>
+<ul>
+<li>Permita que v&#xE1;rios consumidores simult&#xE2;neos processem mensagens recebidas no mesmo canal de mensagens.</li>
+</ul>
+</li>
+<li>
+<p>Pipes and Filters</p>
+<ul>
+<li>Divida uma tarefa que executa processamento complexo em uma s&#xE9;rie de elementos separados que podem ser reutilizados.</li>
+</ul>
+</li>
+<li>
+<p>Priority Queue</p>
+<ul>
+<li>Priorize as solicita&#xE7;&#xF5;es enviadas aos servi&#xE7;os para que as solicita&#xE7;&#xF5;es com prioridade mais alta sejam recebidas e processadas mais rapidamente do que aquelas com prioridade mais baixa.</li>
+</ul>
+</li>
+<li>
+<p>Publisher-Subscriber</p>
+<ul>
+<li>Habilite um aplicativo para anunciar eventos para v&#xE1;rios consumidores interessados de forma ass&#xED;ncrona, sem acoplar os remetentes aos destinat&#xE1;rios.</li>
+</ul>
+</li>
+<li>
+<p>Queue-Based Load Leveling</p>
+<ul>
+<li>Use uma fila que atue como um buffer entre uma tarefa e um servi&#xE7;o que ela chama para suavizar cargas pesadas intermitentes.</li>
+</ul>
+</li>
+<li>
+<p>Scheduler Agent Supervisor</p>
+<ul>
+<li>Coordene um conjunto de a&#xE7;&#xF5;es em um conjunto distribu&#xED;do de servi&#xE7;os e outros recursos remotos.</li>
+</ul>
+</li>
+<li>
+<p>Sequential Convoy</p>
+<ul>
+<li>Processe um conjunto de mensagens relacionadas em uma ordem definida, sem bloquear o processamento de outros grupos de mensagens.</li>
+</ul>
+</li>
+</ul>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/category/messaging" target="_blank">Messaging patterns</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Cloud Design Patterns - Design e implementação]]></title><description><![CDATA[Um bom design engloba fatores como consistência e coerência no design e implantação de componentes.]]></description><link>https://blog.matheusgustavo.com.br/design-e-implementacao/</link><guid isPermaLink="false">62d8971763efb800017944db</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 21 Jul 2022 13:31:38 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ul>
+<li>Ambassador
+<ul>
+<li>Crie servi&#xE7;os auxiliares que enviem solicita&#xE7;&#xF5;es de rede em nome de um servi&#xE7;o ou aplicativo do consumidor.</li>
+</ul>
+</li>
+<li>Anti-Corruption Layer
+<ul>
+<li>Implemente uma fachada ou camada adaptadora entre um aplicativo moderno e um sistema legado.</li>
+</ul>
+</li>
+<li>Backends for Frontends
+<ul>
+<li>Crie servi&#xE7;os de back-end separados para serem consumidos por aplicativos ou interfaces de front-end espec&#xED;ficos.</li>
+</ul>
+</li>
+<li>CQRS
+<ul>
+<li>Separe opera&#xE7;&#xF5;es que leem dados de opera&#xE7;&#xF5;es que atualizam dados usando interfaces separadas.</li>
+</ul>
+</li>
+<li>Compute Resource Consolidation
+<ul>
+<li>Consolide v&#xE1;rias tarefas ou opera&#xE7;&#xF5;es em uma &#xFA;nica unidade computacional.</li>
+</ul>
+</li>
+<li>External Configuration Store
+<ul>
+<li>Mova as informa&#xE7;&#xF5;es de configura&#xE7;&#xE3;o do pacote de implanta&#xE7;&#xE3;o do aplicativo para um local centralizado.</li>
+</ul>
+</li>
+<li>Gateway Aggregation
+<ul>
+<li>Use um gateway para agregar v&#xE1;rias solicita&#xE7;&#xF5;es individuais em uma &#xFA;nica solicita&#xE7;&#xE3;o.</li>
+</ul>
+</li>
+<li>Gateway Offloading
+<ul>
+<li>Descarregue a funcionalidade de servi&#xE7;o compartilhado ou especializado para um proxy de gateway.</li>
+</ul>
+</li>
+<li>Gateway Routing
+<ul>
+<li>Encaminhe solicita&#xE7;&#xF5;es para v&#xE1;rios servi&#xE7;os usando um &#xFA;nico endpoint.</li>
+</ul>
+</li>
+<li>Leader Election
+<ul>
+<li>Coordene as a&#xE7;&#xF5;es executadas por uma cole&#xE7;&#xE3;o de inst&#xE2;ncias de tarefas colaborativas em um aplicativo distribu&#xED;do, elegendo uma inst&#xE2;ncia como l&#xED;der que assume a responsabilidade de gerenciar as outras inst&#xE2;ncias.</li>
+</ul>
+</li>
+<li>Pipes and Filters
+<ul>
+<li>Divida uma tarefa que executa processamento complexo em uma s&#xE9;rie de elementos separados que podem ser reutilizados.</li>
+</ul>
+</li>
+<li>Sidecar
+<ul>
+<li>Implante componentes de um aplicativo em um processo ou cont&#xEA;iner separado para fornecer isolamento e encapsulamento.</li>
+</ul>
+</li>
+<li>Static Content Hosting
+<ul>
+<li>Implante conte&#xFA;do est&#xE1;tico em um servi&#xE7;o de armazenamento baseado em nuvem que possa entreg&#xE1;-lo diretamente ao cliente.</li>
+</ul>
+</li>
+<li>Strangler Fig
+<ul>
+<li>Migre de forma incremental um sistema legado substituindo gradualmente partes espec&#xED;ficas de funcionalidade por novos aplicativos e servi&#xE7;os.</li>
+</ul>
+</li>
+</ul>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/category/design-implementation" target="_blank">Design and implementation patterns</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Cloud Design Patterns - Padrões de gerenciamento de dados]]></title><description><![CDATA[Cloud Patterns - Padrões de gerenciamento de dados]]></description><link>https://blog.matheusgustavo.com.br/padroes-de-gerenciamento-de-dados/</link><guid isPermaLink="false">62d8953663efb8000179449e</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 21 Jul 2022 00:00:06 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><ul>
+<li>Cache-Aside
+<ul>
+<li>Carregar dados sob demanda em um cache de um armazenamento de dados.</li>
+</ul>
+</li>
+<li>CQRS
+<ul>
+<li>Separe opera&#xE7;&#xF5;es que leem dados de opera&#xE7;&#xF5;es que atualizam dados usando interfaces separadas.</li>
+</ul>
+</li>
+<li>Event Sourcing
+<ul>
+<li>Use um armazenamento somente de acr&#xE9;scimo para registrar a s&#xE9;rie completa de eventos que descrevem as a&#xE7;&#xF5;es realizadas nos dados em um dom&#xED;nio.</li>
+</ul>
+</li>
+<li>Index Table
+<ul>
+<li>Crie &#xED;ndices sobre os campos em armazenamentos de dados que s&#xE3;o frequentemente referenciados por consultas.</li>
+</ul>
+</li>
+<li>Materialized View
+<ul>
+<li>Gere exibi&#xE7;&#xF5;es pr&#xE9;-preenchidas sobre os dados em um ou mais armazenamentos de dados quando os dados n&#xE3;o estiverem formatados de maneira ideal para as opera&#xE7;&#xF5;es de consulta necess&#xE1;rias.</li>
+</ul>
+</li>
+<li>Sharding
+<ul>
+<li>Divida um armazenamento de dados em um conjunto de parti&#xE7;&#xF5;es horizontais ou fragmentos.</li>
+</ul>
+</li>
+<li>Static Content Hosting
+<ul>
+<li>Implante conte&#xFA;do est&#xE1;tico em um servi&#xE7;o de armazenamento baseado em nuvem que possa entreg&#xE1;-lo diretamente ao cliente.</li>
+</ul>
+</li>
+<li>Valet Key
+<ul>
+<li>Use um token ou chave que forne&#xE7;a aos clientes acesso direto restrito a um recurso ou servi&#xE7;o espec&#xED;fico.</li>
+</ul>
+</li>
+</ul>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/category/data-management" target="_blank">Data management patterns</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Princípios FIRST para testes de unidade.]]></title><description><![CDATA[Sim, são testes de unidade, não testes unitários.]]></description><link>https://blog.matheusgustavo.com.br/principios-first/</link><guid isPermaLink="false">6241d035e67f48000169d5e2</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Mon, 28 Mar 2022 15:14:33 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Sim, s&#xE3;o testes de unidade, n&#xE3;o testes unit&#xE1;rios, e os princ&#xED;pios FIRST s&#xE3;o:</p>
+<ul>
+<li><strong>F</strong>ast - Devem ser r&#xE1;pidos, pois se for devagar, n&#xE3;o ser&#xE3;o executados.</li>
+<li><strong>I</strong>solated - Um teste n&#xE3;o deve depender ou interferir em outro teste.</li>
+<li><strong>R</strong>epeatable - Testes devem ser repet&#xED;veis, por exemplo, n&#xE3;o deve depender de uma data que possa mudar e quebrar depois de um tempo.</li>
+<li><strong>S</strong>elf-verifying - O teste deve se auto verificar, para saber se deu erro. N&#xE3;o se deve precisar de uma pessoa que valide o log dos testes de unidade para verificar se os testes quebraram ou n&#xE3;o.</li>
+<li><strong>T</strong>imely - Essa regra diz que os testes devem ser escritos antes da escrita do c&#xF3;digo.</li>
+</ul>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink" aria-hidden="true"></i></p>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Chaves de um time de sucesso, segurança psicológica.]]></title><description><![CDATA[Segurança psicológica é a crença de que não se será punido ou humilhado por expor ideias, perguntas, preocupações ou erros.]]></description><link>https://blog.matheusgustavo.com.br/chaves-time-sucesso-seguranca-pisicologica/</link><guid isPermaLink="false">616805987039fc0001a4aacf</guid><category><![CDATA[Sobre Pessoas]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 14 Oct 2021 10:47:24 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Durante dois anos, o Google realizou uma pesquisa para identificar as principais caracter&#xED;sticas de um time de desenvolvimento de software eficiente.<br>
+O resultado dessa pesquisa foi publicado em 2015 e pode ser lido <a href="https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/">aqui</a>.</p>
+<p>O estudo mostra que as equipes trabalham melhor quando seus membros sentem que podem correr riscos, podem contar uns com os outros, t&#xEA;m objetivos claros e acreditam que seu trabalho &#xE9; importante.</p>
+<p>Foram identificados cinco fatores chave para um time de sucesso, sendo a seguran&#xE7;a pisicol&#xF3;gica o mais importante deles.</p>
+<ul>
+<li>
+<p><strong>Seguran&#xE7;a Psicol&#xF3;gica</strong></p>
+<ul>
+<li>Os membros da equipe se sentem seguros para assumir riscos e serem vulner&#xE1;veis uns na frente dos outros.</li>
+</ul>
+</li>
+<li>
+<p><strong>Confiabilidade</strong></p>
+<ul>
+<li>Os membros da equipe realizam as tarefas dentro do prazo e atendem aos padr&#xF5;es de excel&#xEA;ncia do Google.</li>
+</ul>
+</li>
+<li>
+<p><strong>Estrutura e Clareza</strong></p>
+<ul>
+<li>Os membros da equipe t&#xEA;m fun&#xE7;&#xF5;es, planos e objetivos claros.</li>
+</ul>
+</li>
+<li>
+<p><strong>Significado</strong></p>
+<ul>
+<li>O trabalho &#xE9; pessoalmente importante para os membros da equipe.</li>
+</ul>
+</li>
+<li>
+<p><strong>Impacto</strong></p>
+<ul>
+<li>Os membros da equipe pensam que seu trabalho importa e cria mudan&#xE7;as.</li>
+</ul>
+</li>
+</ul>
+<h2 id="o-que-%C3%A9-seguran%C3%A7a-psicol%C3%B3gica">O que &#xE9; seguran&#xE7;a psicol&#xF3;gica?</h2>
+<p>De maneira simpificada, &#xE9; poss&#xED;vel afirmar que existe seguran&#xE7;a psicol&#xF3;gica em um time, se for poss&#xED;vel correr riscos na equipe sem que as pessoas se sintam inseguras ou envergonhadas.</p>
+<p>Mas vale a pena tamb&#xE9;m ouvir o que a maior especialista no assunto, Amy Edmondson, tem a dizer:</p>
+<blockquote>
+<p>&quot;Seguran&#xE7;a psicol&#xF3;gica &#xE9; a cren&#xE7;a de que n&#xE3;o se ser&#xE1; punido ou humilhado por expor ideias, perguntas, preocupa&#xE7;&#xF5;es ou erros.&quot;<br>
+Amy Edmondson<br>
+Harvard Business School Professor</p>
+</blockquote>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink" aria-hidden="true"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/" target="_blank">The five keys to a successful Google team</a></li>
+<li><a href="https://www.impraise.com/blog/what-is-psychological-safety-and-why-is-it-the-key-to-great-teamwork" target="_blank">What is psychological safety and why is it the key to great teamwork?</a></li>
+<li><a href="https://www.youtube.com/embed/LhoLuui9gX8" target="_blank">Building a psychologically safe workplace | Amy Edmondson | TEDxHGSE</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[SOLID - Princípio de Substituição de Liskov]]></title><description><![CDATA[Definição do princípio da substituição de Liskov]]></description><link>https://blog.matheusgustavo.com.br/solid-principio-substituicao-liskov/</link><guid isPermaLink="false">60e02d40de51ec00011903c9</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Sat, 25 Sep 2021 09:27:00 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>O Princ&#xED;pio de Substitui&#xE7;&#xE3;o de Liskov, criado por Barbara Liskov em 1988 diz que:</p>
+<blockquote>
+<p>Os subtipos devem ser substitu&#xED;veis por seus tipos b&#xE1;sicos.</p>
+</blockquote>
+<p>Sendo um subtipo:</p>
+<blockquote>
+<p>Subclasse ou objetos que podem ser substitu&#xED;das pelo tipo que ela estende ou implementa.</p>
+</blockquote>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://www.udemy.com/course/solid-principles-object-oriented-design-architecture" target="_blank">SOLID Principles of Object-Oriented Design and Architecture</a></li>
+<li><a href="https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898" target="_blank">The S.O.L.I.D Principles in Pictures</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[SOLID - Princípio da segregação de interfaces]]></title><description><![CDATA[Definição do princípio da segregação de interfaces.]]></description><link>https://blog.matheusgustavo.com.br/solid-principio-da-segregacao-de-interfaces/</link><guid isPermaLink="false">60e02e53de51ec00011903d5</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Fri, 24 Sep 2021 09:32:00 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>O princ&#xED;pio da segrega&#xE7;&#xE3;o de interfaces afirma que</p>
+<blockquote>
+<p>Nenhum cliente deve ser for&#xE7;ado a depender dos m&#xE9;todos que n&#xE3;o usa.</p>
+</blockquote>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://www.udemy.com/course/solid-principles-object-oriented-design-architecture" target="_blank">SOLID Principles of Object-Oriented Design and Architecture</a></li>
+<li><a href="https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898" target="_blank">The S.O.L.I.D Principles in Pictures</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[SOLID - Princípio da responsabilidade única]]></title><description><![CDATA[Três definições para o princípio da responsabilidade única.]]></description><link>https://blog.matheusgustavo.com.br/solid-principio-da-responsabilidade-unica/</link><guid isPermaLink="false">60e02bc8de51ec00011903b2</guid><category><![CDATA[Sobre Códigos]]></category><category><![CDATA[SOLID]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Fri, 24 Sep 2021 09:24:00 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><h2 id="3-defini%C3%A7%C3%B5es-para-o-princ%C3%ADpio-da-responsabilidade-%C3%BAnica">3 defini&#xE7;&#xF5;es para o princ&#xED;pio da responsabilidade &#xFA;nica:</h2>
+<blockquote>
+<p>Cada classe deve ter apenas uma responsabilidade.</p>
+</blockquote>
+<blockquote>
+<p>Uma classe deve ter um, e apenas um, motivo para mudar.</p>
+</blockquote>
+<blockquote>
+<p>Uma classe deve ser respons&#xE1;vel por um, e apenas um ator.</p>
+</blockquote>
+<h2 id="sintomas-de-c%C3%B3digos-que-n%C3%A3o-atendem-ao-princ%C3%ADpio-da-responsabilidade-%C3%BAnica">Sintomas de c&#xF3;digos que n&#xE3;o atendem ao Princ&#xED;pio da Responsabilidade &#xDA;nica:</h2>
+<ul>
+<li>
+<p><strong>Efeitos colaterais:</strong><br>
+Efeitos colaterais s&#xE3;o bugs criados &apos;sem querer&apos; em funcionalidades que estavam funcionando, isso cria uma grande frustra&#xE7;&#xE3;o nos clientes, nos usu&#xE1;rios do sistema e tamb&#xE9;m nos desenvolvedores. Atentar-se ao princ&#xED;pio da responsabilidade &#xFA;nica diminui esse risco e aumenta a alegria de todos os envolvidos. <i class="far fa-smile-beam"></i>).</p>
+</li>
+<li>
+<p><strong>Merges</strong><br>
+Principalmente se conflituosos, merges podem ser um sintoma de c&#xF3;digos n&#xE3;o aderentes ao SRP, pois por ter mais de uma responsabilidade, a chance de pessoas diferentes estarem trabalhando na mesma base de c&#xF3;digo a fim de realizar entregas de funcionalidades diferentes.</p>
+</li>
+</ul>
+<h2 id="objetivo-da-aplica%C3%A7%C3%A3o-do-princ%C3%ADpio-da-responsabilidade-%C3%BAnica">Objetivo da aplica&#xE7;&#xE3;o do princ&#xED;pio da responsabilidade &#xFA;nica:</h2>
+<ul>
+<li>O principal objetivo do SRP &#xE9; separar a responsabilidade de cada classe, diminuindo o risco de efeitos colaterais e aumentar a facilidade na leitura, entendimento e manuten&#xE7;&#xE3;o do c&#xF3;digo.</li>
+</ul>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://www.udemy.com/course/solid-principles-object-oriented-design-architecture" target="_blank">SOLID Principles of Object-Oriented Design and Architecture</a></li>
+<li><a href="https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898" target="_blank">The S.O.L.I.D Principles in Pictures</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[SOLID - Princípio do Aberto/Fechado]]></title><description><![CDATA[Duas definições para ajudar a entender o princípio do aberto/fechado.]]></description><link>https://blog.matheusgustavo.com.br/solid-principio-aberto-fechado/</link><guid isPermaLink="false">60e02c56de51ec00011903bb</guid><category><![CDATA[SOLID]]></category><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Fri, 24 Sep 2021 09:23:00 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>O pr&#xED;ncipio aberto/fechado, cunhado em 1988 por Bertrand Meyer e diz que:</p>
+<blockquote>
+<p>Um artefato de software deve ser aberto para extens&#xE3;o, mas fechado para modifica&#xE7;&#xE3;o.</p>
+</blockquote>
+<blockquote>
+<p>Dependa de abstra&#xE7;&#xF5;es est&#xE1;veis e modifique o sistema fornecendo diferentes implementa&#xE7;&#xF5;es concretas.</p>
+</blockquote>
+<p>Em outras palavras, o princ&#xED;pio do aberto e fechado &#xE9; o pr&#xED;ncipio do polimorfismo.</p>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://www.udemy.com/course/solid-principles-object-oriented-design-architecture" target="_blank">SOLID Principles of Object-Oriented Design and Architecture</a></li>
+<li><a href="https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898" target="_blank">The S.O.L.I.D Principles in Pictures</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[SOLID - Princípio da Inversão de Dependência]]></title><description><![CDATA[Duas definições para o princípio da inversão de dependência.]]></description><link>https://blog.matheusgustavo.com.br/solid-principio-da-inversao-de-dependencia/</link><guid isPermaLink="false">60e030d1de51ec00011903e4</guid><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 23 Sep 2021 20:15:00 GMT</pubDate><content:encoded><![CDATA[<p> </p><!--kg-card-begin: markdown--><p>O Princ&#xED;pio de Invers&#xE3;o de Depend&#xEA;ncia diz que:</p>
+<blockquote>
+<p>M&#xF3;dulos de alto n&#xED;vel n&#xE3;o devem depender de m&#xF3;dulos de baixo n&#xED;vel e ambos devem depender de abstra&#xE7;&#xF5;es.</p>
+</blockquote>
+<blockquote>
+<p>Abstra&#xE7;&#xF5;es n&#xE3;o devem depender de detalhes, mas detalhes devem depender de abstra&#xE7;&#xF5;es.</p>
+</blockquote>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://www.udemy.com/course/solid-principles-object-oriented-design-architecture" target="_blank">SOLID Principles of Object-Oriented Design and Architecture</a></li>
+<li><a href="https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898" target="_blank">The S.O.L.I.D Principles in Pictures</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Código Limpo]]></title><description><![CDATA[Dicas para diminuir a quantidade de "What the Fuck por minuto" em seu código.]]></description><link>https://blog.matheusgustavo.com.br/codigo-limpo/</link><guid isPermaLink="false">60e0372bde51ec0001190424</guid><category><![CDATA[Sobre Códigos]]></category><category><![CDATA[Código Limpo]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Thu, 23 Sep 2021 10:12:00 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>No in&#xED;cio do livro &quot;Clean Code&quot;, de &quot;Robert C. Martin&quot; existe a seguinte frase:</p>
+<blockquote>
+<p>A &#xFA;nica forma de se medir a qualidade de um c&#xF3;digo &#xE9; a <strong>What the Fuck por minuto</strong>.</p>
+</blockquote>
+<h2 id="problemas-de-um-c%C3%B3digo-sujo">Problemas de um c&#xF3;digo sujo:</h2>
+<ul>
+<li>
+<p>Custo para evolu&#xE7;&#xE3;o e manuten&#xE7;&#xE3;o do c&#xF3;digo crescendo exponencialmente conforme a base de c&#xF3;digo aumenta, com muito tempo despendido em refatora&#xE7;&#xF5;es que n&#xE3;o geram valor ao sistema, e em algum momento, o desejo de uma reescrita total do sistema.</p>
+</li>
+<li>
+<p>Estresse, des&#xE2;nimo, baixa performance, trabalho em excesso, ansiedade, e no limite, o <a href="https://www.agiledrop.com/blog/burnout-symptoms-developer-burnout-ways-tackle-it" target="_blank">burnout</a> dos desenvolvedores.</p>
+</li>
+<li>
+<p>Risco elevado de efeitos colaterais (bugs) para cada modifica&#xE7;&#xE3;o no c&#xF3;digo, que afetam o usu&#xE1;rio final do sistema, podendo levar ao fracasso de um projeto num mundo digital onde as pessoas tem uma alta expectativa sobre a usabilidade e disponibilidade das aplica&#xE7;&#xF5;es que interagem em seus diversos dispositivos.</p>
+</li>
+</ul>
+<h2 id="e-como-evitar-um-c%C3%B3digo-com-um-wtfm-muito-alto">E como evitar um c&#xF3;digo com um WTF/m muito alto?</h2>
+<p><strong>Automatize e use padr&#xF5;es.</strong></p>
+<ul>
+<li>Utilize padr&#xF5;es, conven&#xE7;&#xF5;es de formata&#xE7;&#xE3;o de c&#xF3;digo, ferramentas de an&#xE1;lise est&#xE1;tica de c&#xF3;digo como o Eslint ou SonarQube.</li>
+<li>Automatize ao m&#xE1;ximo, colocando checagens no pre-commit, pr&#xE9;-push, al&#xE9;m de barrar a esteira de deploy caso os padr&#xF5;es n&#xE3;o estejam sendo seguidos.</li>
+<li>Tenha um processo de revis&#xE3;o de c&#xF3;digo, o code review, e garanta que o c&#xF3;digo seja revisado e aprovado pelos pares do time antes de se integrar a base de c&#xF3;digo principal.</li>
+</ul>
+<p>Al&#xE9;m disso, conhe&#xE7;a e considere algumas das diretivas propostas no livro:</p>
+<p><strong>Nomes s&#xE3;o muito importantes</strong><br>
+Nomes de vari&#xE1;veis, classes, pacotes, m&#xF3;dulos ou qualquer outro peda&#xE7;o de c&#xF3;digo devem ser pensados com carinho, e podem ser mudados sempre que um nome mais significativo for identificado. Quanto mais os desenvolvedores conhecerem a linguagem do neg&#xF3;cio, mais f&#xE1;cil se torna essa tarefa, e tenha em mente que um c&#xF3;digo deve ser escrito para que outros programadores o entenda com facilidade.</p>
+<p><strong>Fun&#xE7;&#xF5;es devem ser pequenas</strong><br>
+Evite fun&#xE7;&#xF5;es com muitas linhas e quebre blocos de linhas por contexto, separando-os em fun&#xE7;&#xF5;es ou m&#xE9;todos, e mantenha-se atento ao princ&#xED;pio de que cada fun&#xE7;&#xE3;o deve ter apenas uma responsabilidade. Atente-se tamb&#xE9;m a quantidade de par&#xE2;metros que uma fun&#xE7;&#xE3;o ou m&#xE9;todo recebe, para que esse n&#xFA;mero n&#xE3;o seja muito alto.</p>
+<p><strong>Comente apenas o necess&#xE1;rio</strong><br>
+Fun&#xE7;&#xF5;es pequenas e bem nomeadas s&#xE3;o uma documenta&#xE7;&#xE3;o do c&#xF3;digo por si s&#xF3; e podem evitar a necessidade de escrita de coment&#xE1;rios que explicam o que os blocos de c&#xF3;digo realizam, logo a necessidade de muitos coment&#xE1;rios &#xE9; um sintoma de que os nomes de fun&#xE7;&#xF5;es e vari&#xE1;veis n&#xE3;o s&#xE3;o claros o suficiente, atente-se a isso.</p>
+<p>Entretanto, seja pragm&#xE1;tico, um coment&#xE1;rio &#xE9; muito bem vindo em uma regex complexa, uma opera&#xE7;&#xE3;o matem&#xE1;tica de dif&#xED;cil compreens&#xE3;o, ou quando, apesar do esfor&#xE7;o, n&#xE3;o foi poss&#xED;vel (ainda) encontrar um nome significativo para alguma fun&#xE7;&#xE3;o ou vari&#xE1;vel. Exce&#xE7;&#xF5;es em regras de neg&#xF3;cio tamb&#xE9;m s&#xE3;o bons candidatos a coment&#xE1;rios.</p>
+<p><strong>Mantenha um padr&#xE3;o de formata&#xE7;&#xE3;o</strong><br>
+Pluralidade e diversidade de pessoas no time s&#xE3;o bons para a constru&#xE7;&#xE3;o de um sistema, aumenta a criatividade e a capacidade coletiva de resolver problemas, no entanto, diversidade no estilo e formata&#xE7;&#xE3;o do c&#xF3;digo &#xE9; ruim e aumenta o qd/m durante a leitura e entendimento do mesmo, para um time, &#xE9; essencial que existam acordos, conven&#xE7;&#xF5;es e guias de estilo de formata&#xE7;&#xE3;o.</p>
+<p><strong>Seja o verdadeiro autor do c&#xF3;digo</strong><br>
+Para simplificar esse t&#xF3;pico, deixo para reflex&#xE3;o &#xE0; seguinte frase de <strong>Michael Feathers</strong>, autor de <strong>Working Effectively with Legacy Code</strong></p>
+<blockquote>
+<p>Eu poderia listar todas as qualidades que vejo em um c&#xF3;digo<br>
+limpo, mas h&#xE1; uma predominante acima de todas as outras.<br>
+Um c&#xF3;digo limpo sempre parece que foi escrito por algu&#xE9;m<br>
+que se importava.</p>
+</blockquote>
+<p><strong>DRY (Don&#x2019;t Repeat Yourself)</strong></p>
+<p>Existem algumas vantagens em se manter um software sem repeti&#xE7;&#xE3;o de c&#xF3;digo, entre elas:</p>
+<ul>
+<li>Menos c&#xF3;digo, menos probabilidade de bugs.</li>
+<li>Menos c&#xF3;digo, maior velocidade de compreens&#xE3;o e manuten&#xE7;&#xE3;o.</li>
+<li>Aumento na produtividade devido ao reuso de c&#xF3;digo.</li>
+</ul>
+<p>Para evitar a repeti&#xE7;&#xE3;o de c&#xF3;digo, utilize pastas compartilhadas, m&#xF3;dulos, SDKs, projetos menores e mais espec&#xED;ficos, resumindo, don&apos;t repeat yourself.</p>
+<p><strong>Testes automatizados limpos</strong><br>
+&#xC9; comum encontrar c&#xF3;digos onde a preocupa&#xE7;&#xE3;o com a limpeza do c&#xF3;digo n&#xE3;o seja aplicada aos testes automatizados, o que &#xE9; incoerente, pois testes tamb&#xE9;m s&#xE3;o c&#xF3;digos, e testes sujos v&#xE3;o se tornando mais dif&#xED;ceis de entender e manter da mesma maneira que o c&#xF3;digo funcional. Em quest&#xE3;o a limpeza de c&#xF3;digo, a r&#xE9;gua deve ser a mesma, para c&#xF3;digo funcional e testes automatizados.</p>
+<p><strong>A regra do escoteiro</strong><br>
+Existe uma regra entre os escoteiros que diz:</p>
+<blockquote>
+<p>Deixe o acampamento mais limpo do que voc&#xEA; o encontrou.</p>
+</blockquote>
+<p>Troque acampamento por &quot;base de c&#xF3;digo&quot; e seja o escoteiro, sempre entregando um c&#xF3;digo melhor do que o que encontrou, e ent&#xE3;o ele ser&#xE1; um c&#xF3;digo que se mant&#xE9;m e evolui com o tempo, facilitando a vida de todos e evitando os problemas citados nesse post.</p>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink" aria-hidden="true"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://www.amazon.com.br/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=asc_df_0132350882/?tag=googleshopp00-20&amp;linkCode=df0&amp;hvadid=379787788238&amp;hvpos=&amp;hvnetw=g&amp;hvrand=13289082428637734770&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1001729&amp;hvtargid=pla-435472505264&amp;psc=1" target="_blank">Clean Code: A Handbook of Agile Software Craftsmanship</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item><item><title><![CDATA[Boas práticas para nomeação de recursos REST.]]></title><description><![CDATA[Algumas boas práticas para nomeação de recursos em APIs REST]]></description><link>https://blog.matheusgustavo.com.br/rest-boas-praticas-para-nomeacao-de-recursos/</link><guid isPermaLink="false">614b3cc902580100018a1ce8</guid><category><![CDATA[REST]]></category><category><![CDATA[Sobre Códigos]]></category><dc:creator><![CDATA[Matheus Gustavo]]></dc:creator><pubDate>Wed, 22 Sep 2021 14:27:23 GMT</pubDate><content:encoded><![CDATA[<!--kg-card-begin: markdown--><p>Em rest, a principal abstra&#xE7;&#xE3;o s&#xE3;o os recursos, e um recurso pode ser &#xFA;nico ou uma cole&#xE7;&#xE3;o. Por exemplo, &#x201C;clientes&#x201D; &#xE9; uma cole&#xE7;&#xE3;o de recursos, e &#x201C;cliente&#x201D; &#xE9; um recurso &#xFA;nico. N&#xF3;s poder&#xED;amos identificar a cole&#xE7;&#xE3;o de recursos &#x201C;clientes&#x201D; atrav&#xE9;s do path <strong>&#x201C;/clientes&#x201D;</strong> e uma entidade &#xFA;nica de &#x201C;cliente&#x201D; atrav&#xE9;s do path <strong>&#x201C;/clientes/{id-do-cliente}&#x201D;</strong>, sendo o id-do-cliente um path parameter.</p>
+<p>Um recurso pode conter uma sub-cole&#xE7;&#xE3;o, por exemplo, a sub cole&#xE7;&#xE3;o &#x201C;contas&#x201D; de um &#x201C;cliente&#x201D; que em particular poderia ser identificado atrav&#xE9;s do path <strong>&#x201C;/clientes/{cliente-id}/contas&#x201D;</strong>. Da mesma maneira que o recurso &#xFA;nico &#x201C;conta&#x201D; dentro da sub-cole&#xE7;&#xE3;o de recursos &#x201C;contas&#x201D; poderia ser manipulado no path: &#x201C;/clientes/{cliente-id}/contas/{conta-id}&#x201D;.</p>
+<h2 id="arqu%C3%A9tipos-de-recursos">Arqu&#xE9;tipos de recursos:</h2>
+<ul>
+<li>
+<p>Documento</p>
+<ul>
+<li>Um documento se assemelha a uma inst&#xE2;ncia de objeto ou registro de banco de dados, um substantivo, uma coisa. No REST, voc&#xEA; pode visualiz&#xE1;-lo como um &#xFA;nico recurso dentro da cole&#xE7;&#xE3;o de recursos, como no caso do cliente dentro da cole&#xE7;&#xE3;o de clientes, mapeado no caminho /clientes/{cliente-id}</li>
+<li>Utilize o nome do recurso no singular para o arqu&#xE9;tipo de documento.</li>
+</ul>
+</li>
+<li>
+<p>Cole&#xE7;&#xE3;o</p>
+<ul>
+<li>Uma cole&#xE7;&#xE3;o &#xE9; um diret&#xF3;rio de recursos, como no caso em que clientes &#xE9; uma cole&#xE7;&#xE3;o de cliente.</li>
+<li>Utilize o nome do recurso no plural para arqu&#xE9;tipo de cole&#xE7;&#xE3;o.</li>
+</ul>
+</li>
+<li>
+<p>Controlador</p>
+<ul>
+<li>Um recurso de controlador modela um conceito de procedimento. Os recursos do controlador s&#xE3;o como fun&#xE7;&#xF5;es execut&#xE1;veis, com par&#xE2;metros e valores de retorno; entradas e sa&#xED;das, como no exemplo de validar a conta do cliente mapeado no caminho /clientes/{cliente-id}/contas/{conta-id}/validar.</li>
+<li>Utilize &#x201C;verbo&#x201D; para denotar o arqu&#xE9;tipo do controlador.</li>
+</ul>
+</li>
+</ul>
+<h2 id="boas-pr%C3%A1ticas-para-nomea%C3%A7%C3%A3o-de-recursos">Boas Pr&#xE1;ticas para nomea&#xE7;&#xE3;o de recursos:</h2>
+<ul>
+<li>Prefira utilizar substantivos para representar recursos.</li>
+<li>Use letras min&#xFA;sculas nas URLs.</li>
+<li>Use h&#xED;fens (-) para melhorar a legibilidade dos URLs.</li>
+<li>N&#xE3;o use underscore ou camelCase nas URLs.</li>
+<li>N&#xE3;o use barra final (/) em URLs.</li>
+<li>N&#xE3;o use extens&#xF5;es de arquivo.</li>
+<li>Seja consistente no design da API.</li>
+</ul>
+<blockquote>
+<p>A principal abstra&#xE7;&#xE3;o de informa&#xE7;&#xF5;es no REST &#xE9; um recurso. Qualquer informa&#xE7;&#xE3;o que possa ser nomeada pode ser um recurso: um documento ou imagem, um servi&#xE7;o temporal (por exemplo, &quot;clima de hoje em Los Angeles&quot;), uma cole&#xE7;&#xE3;o de outros recursos, um objeto n&#xE3;o virtual (por exemplo, uma pessoa), e assim por diante. Em outras palavras, qualquer conceito que possa ser alvo de refer&#xEA;ncia de hipertexto de um autor deve se enquadrar na defini&#xE7;&#xE3;o de um recurso. Um recurso &#xE9; um mapeamento conceitual para um conjunto de entidades, n&#xE3;o a entidade que corresponde ao mapeamento em um determinado momento.<br>
+<strong>Roy Fielding</strong></p>
+</blockquote>
+<p>Grande abra&#xE7;o! <i class="far fa-smile-wink" aria-hidden="true"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://restfulapi.net/resource-naming/" target="_blank">REST Resource Naming Guide</a></li>
+</ul>
+<!--kg-card-end: markdown-->]]></content:encoded></item></channel></rss>

@@ -1,0 +1,4 @@
+User-agent: *
+Sitemap: https://blog.matheusgustavo.com.br/sitemap.xml
+Disallow: /ghost/
+Disallow: /p/

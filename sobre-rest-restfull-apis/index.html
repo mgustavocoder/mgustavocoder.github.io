@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	    <title>Sobre REST e Restful APIs</title>
+		<link rel="stylesheet" type="text/css" href="/assets/styles/mgcrisp.css?v=782f417e20" lazyload>
+	    <meta name="HandheldFriendly" content="True" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+	    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://blog.matheusgustavo.com.br/tag/sobre-codigos/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="https://blog.matheusgustavo.com.br/sobre-rest-restfull-apis/amp/" />
+    
+    <meta property="og:site_name" content="Matheus Gustavo" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Sobre REST e Restful APIs" />
+    <meta property="og:description" content="Um resumo teórico sobre REST e Restful APIs." />
+    <meta property="og:url" content="https://blog.matheusgustavo.com.br/tag/sobre-codigos/" />
+    <meta property="article:published_time" content="2021-09-22T09:48:00.000Z" />
+    <meta property="article:modified_time" content="2022-06-23T01:27:28.000Z" />
+    <meta property="article:tag" content="Sobre Códigos" />
+    <meta property="article:tag" content="REST" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sobre REST e Restful APIs" />
+    <meta name="twitter:description" content="Um resumo teórico sobre REST e Restful APIs." />
+    <meta name="twitter:url" content="https://blog.matheusgustavo.com.br/tag/sobre-codigos/" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Matheus Gustavo" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Sobre Códigos, REST" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Matheus Gustavo",
+        "url": "https://blog.matheusgustavo.com.br/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog.matheusgustavo.com.br/content/images/2021/10/opt-profile-image.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Matheus Gustavo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blog.matheusgustavo.com.br/content/images/2021/07/Captura-de-tela-de-2021-06-08-20-53-47-1.png",
+            "width": 447,
+            "height": 460
+        },
+        "url": "https://blog.matheusgustavo.com.br/404/",
+        "sameAs": []
+    },
+    "headline": "Sobre REST e Restful APIs",
+    "url": "https://blog.matheusgustavo.com.br/sobre-rest-restfull-apis/",
+    "datePublished": "2021-09-22T09:48:00.000Z",
+    "dateModified": "2022-06-23T01:27:28.000Z",
+    "keywords": "Sobre Códigos, REST",
+    "description": "Um resumo teórico sobre REST e Restful APIs.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.matheusgustavo.com.br/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.7" />
+    <link rel="alternate" type="application/rss+xml" title="Matheus Gustavo" href="https://blog.matheusgustavo.com.br/rss/" />
+    
+    		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5XEDPMBD9"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-T5XEDPMBD9');
+		</script><style>:root {--ghost-accent-color: #FF1A75;}</style>
+
+
+		<style>
+			/* https://fonts.googleapis.com/css?family=Bree+Serif */
+			/* latin-ext */
+			@font-face {
+			font-family: 'Bree Serif';
+			font-style: normal;
+			font-weight: 200;
+			src: url(https://fonts.gstatic.com/s/breeserif/v10/4UaHrEJCrhhnVA3DgluA96Tp56N1.woff2) format('woff2');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+			font-display: swap;
+			}
+			/* latin */
+			@font-face {
+			font-family: 'Bree Serif';
+			font-style: normal;
+			font-weight: 200;
+			src: url(https://fonts.gstatic.com/s/breeserif/v10/4UaHrEJCrhhnVA3DgluA96rp5w.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			font-display: swap;
+			}
+		</style>
+
+	</head>
+	<body class="post-template tag-sobre-codigos tag-rest">
+
+		<header id="header" >
+			<a id="logo" href="https://blog.matheusgustavo.com.br"><img src="https://blog.matheusgustavo.com.br/content/images/2021/10/opt-profile-image.png" alt="Matheus Gustavo" /></a>
+			<div id="follow-icons">
+	<a href="https://linkedin.com/in/mgustavocoder" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+	<a href="https://github.com/mgustavocoder" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+	<a href="https://gitlab.com/mgustavocoder" target="_blank"><i class="fab fa-gitlab fa-3x"></i></a>
+</div>
+			  <h6><a href="https://blog.matheusgustavo.com.br/tag/sobre-codigos/">Sobre Códigos</a></h6>
+  <h6><a href="https://blog.matheusgustavo.com.br/tag/sobre-pessoas/">Sobre Pessoas</a></h6>
+
+		</header>
+		<main id="content">
+			
+<style>
+	a {
+		font-weight: 400;
+		text-decoration: hsl;
+		color: limegreen;
+	}
+	.post {
+		background-color: unset;
+	}
+</style>
+
+<article id="60e03150de51ec00011903f2" class="post tag-sobre-codigos tag-rest no-image">
+	<h1 class="post-title">Sobre REST e Restful APIs</h1>
+	<!--kg-card-begin: markdown--><p>REST significa REpresentational State Transfer. É um padrão de comunicação cliente/servidor apresentado por Roy Fielding em 2000 em sua disertação doutorado pela universidade da Califórnia.</p>
+<p>Esse padrão é muito popular em aplicações que disponibilizam APIs (Application Programming Interface), geralmente trafegando dados no formato JSON atráves do protocolo HTTP.</p>
+<p>O protocolo REST utiliza os métodos do HTTP como GET, POST, PUT, PATCH e DELETE para manipular recursos no servidor.</p>
+<h2 id="utiliza%C3%A7%C3%A3o-dos-m%C3%A9todos-http-em-apis-rest">Utilização dos métodos HTTP em APIs REST</h2>
+<p><strong>HTTP GET</strong><br>
+O método GET é usado para buscar a representação de um recurso, sem modificá-lo. O GET seria o READ do CRUD, e não deve alterar o recurso de nenhuma forma. Além disso, APIs GET devem ser idempotentes, o que significa que múltiplos requests idênticos, devem produzir o mesmo resultado até que uma outra API (POST ou PUT) altere o recurso no servidor.</p>
+<p>O resultado de sucesso esperado é o HTTP Status Code 200 (OK) com o conteúdo no body.</p>
+<p><strong>HTTP POST</strong><br>
+O método POST deve ser usado para criar novos recursos, e seria o CREATE na correlação com o CRUD.</p>
+<p>O resultado de sucesso esperado é o HTTP Status Code 201 (Created) ou 202 (Accepted) caso a ação tenha sido enfileirada.</p>
+<p><strong>HTTP PUT</strong><br>
+O método PUT é utilizado para atualizar recursos existentes e caso o recurso não exista, o método pode decidir se cria ou não o recurso.</p>
+<p>O resultado de sucesso esperado varia entre os HTTP Status Code 200 (OK), 201 (Created), 204 (No Content) ou 202 (Accepted) caso a ação tenha sido enfileirada.</p>
+<p><strong>HTTP PATCH</strong><br>
+O método PATCH é responsável por atualizações parciais nos recursos, enquanto o PUT é responsável pela atualização do recurso completo.</p>
+<p>O resultado de sucesso esperado varia entre os HTTP Status Code 200 (OK), 204 (No Content) ou 202 (Accepted) caso a ação tenha sido enfileirada.</p>
+<p><strong>HTTP DELETE</strong><br>
+O método delete é responsável por deletar recursos.</p>
+<p>O resultado de sucesso esperado varia entre os HTTP Status Code 200 (OK), 204 (No content) ou 202 (Accepted) caso a ação tenha sido enfileirada.</p>
+<h2 id="6-requisitos-da-uma-api-restful">6 requisitos da uma API RESTful</h2>
+<ul>
+<li>
+<p><strong>Interface Uniforme</strong><br>
+A seguinte frase exemplifica o conceito de interface uniforme:<br>
+Uma vez que os desenvolvedores se familiarizem com uma de suas APIs, eles devem ser capazes de conseguir utilizar suas outras APIs de maneira similar.<br>
+É preciso definir quais recursos serão disponibilizados através da API e seguir rigorosamente esse padrão, não modificando o formato da resposta entre JSON e XML entre APIs, por exemplo.<br>
+Um recurso não deve ser muito grande e conter muita informação em seu conteúdo, ao invés disso, deve conter links para outros recursos quando necessário.</p>
+</li>
+<li>
+<p><strong>Cliente Servidor</strong><br>
+Essencialmente, essa regra diz que frontend e backend devem poder evoluir separadamente, o que é cada vez mais um padrão de mercado.<br>
+Backend e Frontend devem poder ser desenvolvidos separadamente e até mesmo trocados, contando que a interface entre eles não seja alterada.</p>
+</li>
+<li>
+<p><strong>Stateless</strong><br>
+Não ter estado significa que o servidor não irá armazenar nada sobre a requisição HTTP que o cliente fez. Toda requisição será tratada como uma requisição nova. Sem sessão, sem histórico.<br>
+Se uma aplicação precisa manter estado, por exemplo a autenticação do usuário, o lado do cliente precisa manter esses dados e informá-los no request em  casa solicitação.<br>
+Nenhum contexto do cliente deve ser armazenado no lado do servidor entre requisições. O cliente é responsável por armazenar o estado da aplicação.</p>
+</li>
+<li>
+<p><strong>Cacheable</strong><br>
+No REST, devemos aplicar cache quando possível, quando um recurso não muda muito com o tempo, por exemplo. Os recursos devem se declarar cacheaveis, através dos headers da requisição HTTP.<br>
+Uma estratégia de cache bem gerenciada reduz a carga de trabalho do backend, melhorando a escalabilidade e performance da aplicação.</p>
+</li>
+<li>
+<p><strong>Arquitetura em Camadas</strong><br>
+O estilo de sistema em camadas permite que uma arquitetura seja composta de camadas hierárquicas, restringindo o comportamento do componente de forma que cada componente não possa &quot;ver&quot; além da camada imediata com a qual está interagindo.</p>
+</li>
+<li>
+<p><strong>Código sob demanda (opcional)</strong><br>
+Apesar de geralmente lidarmos com JSON nas respostas de nossa API, também é permitido responder código executável para suportar parte da aplicação.</p>
+</li>
+</ul>
+<p>Grande abraço! <i class="far fa-smile-wink" aria-hidden="true"></i></p>
+<p><i class="fas fa-book"></i> <strong>Para saber mais:</strong></p>
+<ul>
+<li><a href="https://restfulapi.net/" target="_blank">What is REST</a></li>
+</ul>
+<!--kg-card-end: markdown-->
+  <section id="comments">
+    <div class="fb-comments" data-href="https://mgustavocoder.github.io/" data-width="" data-numposts="5"></div>
+</section></article>
+
+		</main>
+		<hr>
+		<footer id="footer">
+			<h3>Social</h3>
+			<div>
+	<ul>
+		<li><a href="https://linkedin.com/in/mgustavocoder" target="_blank">Linkedin</a></li>
+		<li><a href="https://github.com/mgustavocoder" target="_blank">Github</a></li>
+		<li><a href="https://gitlab.com/mgustavocoder" target="_blank">Gitlab</a></li>
+</div>
+			<h3>Contato</h3>
+			<div>
+	<p>Você pode entrar em contato comigo pelo próprio chat do <a href="https://linkedin.com/in/mgustavocoder" target="_blank">Linkedin</a> ou se preferir, via e-mail também <b>mgustavocoder@gmail.com</b></p>
+</div>			<hr>
+			<section id="footer-message">2022 Matheus Gustavo</section>
+		</footer>
+	<script defer src="https://kit.fontawesome.com/c3e419eb8f.js" crossorigin="anonymous"></script>
+	</body>
+</html>
