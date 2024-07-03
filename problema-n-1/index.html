@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Problema N+1 (Banco de Dados)</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=bd5a27b057">
+
+    <link rel="icon" href="https://www.matheusgustavo.com.br/content/images/size/w256h256/2024/01/perfil-1.jpeg" type="image/jpeg">
+    <link rel="canonical" href="https://www.matheusgustavo.com.br/problema-n-1/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Matheus Gustavo">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Problema N+1 (Banco de Dados)">
+    <meta property="og:description" content="O problema N+1 (N+1 query problem) é uma questão comum de desempenho em bancos de dados, especialmente em aplicações que utilizam frameworks de ORM (Object-Relational Mapping) como Hibernate, Doctrine ou ActiveRecord. O problema ocorre quando um sistema executa uma quantidade excessiva de consultas SQL para recuperar dados relacionados,">
+    <meta property="og:url" content="https://www.matheusgustavo.com.br/problema-n-1/">
+    <meta property="og:image" content="https://static.ghost.org/v5.0.0/images/publication-cover.jpg">
+    <meta property="article:published_time" content="2024-07-03T09:06:38.000Z">
+    <meta property="article:modified_time" content="2024-07-03T09:06:57.000Z">
+    <meta property="article:tag" content="sobre-codigos">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/ghost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Problema N+1 (Banco de Dados)">
+    <meta name="twitter:description" content="O problema N+1 (N+1 query problem) é uma questão comum de desempenho em bancos de dados, especialmente em aplicações que utilizam frameworks de ORM (Object-Relational Mapping) como Hibernate, Doctrine ou ActiveRecord. O problema ocorre quando um sistema executa uma quantidade excessiva de consultas SQL para recuperar dados relacionados,">
+    <meta name="twitter:url" content="https://www.matheusgustavo.com.br/problema-n-1/">
+    <meta name="twitter:image" content="https://static.ghost.org/v5.0.0/images/publication-cover.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Matheus Gustavo">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="sobre-codigos">
+    <meta name="twitter:site" content="@ghost">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="840">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Matheus Gustavo",
+        "url": "https://www.matheusgustavo.com.br/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.matheusgustavo.com.br/content/images/size/w256h256/2024/01/perfil-1.jpeg",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Matheus Gustavo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.gravatar.com/avatar/ef52ec319e8e33f9b1a7c7e045c5a12e?s=250&r=x&d=mp",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://www.matheusgustavo.com.br/author/matheus/",
+        "sameAs": []
+    },
+    "headline": "Problema N+1 (Banco de Dados)",
+    "url": "https://www.matheusgustavo.com.br/problema-n-1/",
+    "datePublished": "2024-07-03T09:06:38.000Z",
+    "dateModified": "2024-07-03T09:06:57.000Z",
+    "keywords": "sobre-codigos",
+    "description": "O problema N+1 (N+1 query problem) é uma questão comum de desempenho em bancos de dados, especialmente em aplicações que utilizam frameworks de ORM (Object-Relational Mapping) como Hibernate, Doctrine ou ActiveRecord. O problema ocorre quando um sistema executa uma quantidade excessiva de consultas SQL para recuperar dados relacionados, resultando em um grande número de consultas individuais em vez de consultas mais eficientes.\n\n\nExplicação do Problema N+1:\n\nImagine que você tem duas tabelas em ",
+    "mainEntityOfPage": "https://www.matheusgustavo.com.br/problema-n-1/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.76">
+    <link rel="alternate" type="application/rss+xml" title="Matheus Gustavo" href="https://www.matheusgustavo.com.br/rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="22ee5a86e3470c44dca2f21f4c" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://www.matheusgustavo.com.br/" crossorigin="anonymous"></script>
+    
+    <link href="https://www.matheusgustavo.com.br/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=bd5a27b057"></script><style>:root {--ghost-accent-color: #FF1A75;}</style>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=bd5a27b057">
+</head>
+
+<body class='post-template tag-sobre-codigos is-head-left-logo has-serif-body'>
+<div class="site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="https://www.matheusgustavo.com.br">
+                            Matheus Gustavo
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-sobre-mim"><a href="https://www.matheusgustavo.com.br/sobre-mim/">Sobre mim</a></li>
+    <li class="nav-sobre-codigos"><a href="https://www.matheusgustavo.com.br/tag/sobre-codigos/">Sobre Códigos</a></li>
+    <li class="nav-sobre-pessoas"><a href="https://www.matheusgustavo.com.br/tag/sobre-pessoas/">Sobre Pessoas</a></li>
+    <li class="nav-resenhas"><a href="https://www.matheusgustavo.com.br/tag/resenhas/">Resenhas</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="site-content">
+        
+<main class="site-main">
+
+        <article class="single post tag-sobre-codigos no-image">
+
+        <header class="single-header gh-canvas">
+            <div class="single-meta">
+                    <span class="single-meta-item single-meta-length">
+                        2 min read
+                    </span>
+                    <span class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-sobre-codigos" href="/tag/sobre-codigos/">
+                            sobre-codigos
+                        </a>
+                    </span>
+            </div>
+
+            <h1 class="single-title">Problema N+1 (Banco de Dados)</h1>
+
+
+
+        </header>
+
+    <div class="single-content gh-content gh-canvas">
+        <p>O problema N+1 (N+1 query problem) é uma questão comum de desempenho em bancos de dados, especialmente em aplicações que utilizam frameworks de ORM (Object-Relational Mapping) como Hibernate, Doctrine ou ActiveRecord. O problema ocorre quando um sistema executa uma quantidade excessiva de consultas SQL para recuperar dados relacionados, resultando em um grande número de consultas individuais em vez de consultas mais eficientes.</p><h3 id="explica%C3%A7%C3%A3o-do-problema-n1">Explicação do Problema N+1:</h3><p>Imagine que você tem duas tabelas em um banco de dados: <code>Authors</code> (Autores) e <code>Books</code> (Livros), onde cada autor pode ter vários livros. Suponha que você queira exibir uma lista de autores juntamente com os títulos dos livros que cada autor escreveu. O problema N+1 ocorre da seguinte forma:</p><ol><li><strong>Consulta Inicial</strong>: Você faz uma consulta para recuperar todos os autores.sqlCopy code<code>SELECT * FROM</code> Authors;<br></li><li><strong>Consultas Adicionais</strong>: Para cada autor recuperado, você faz uma consulta separada para obter os livros desse autor.sqlCopy code<code>SELECT * FROM Books WHERE author_id = 1</code>;<br><code>SELECT * FROM Books WHERE author_id = 2</code>;<br><code>SELECT * FROM Books WHERE author_id = 3</code>;<br>...<br><code>SELECT * FROM Books WHERE author_id =</code> N;<br></li></ol><p>Se você tiver N autores, isso resultará em 1 (consulta inicial) + N (consultas adicionais) = N+1 consultas no total. Isso pode causar um desempenho extremamente ruim, especialmente com um grande número de registros, devido à sobrecarga de múltiplas consultas ao banco de dados.</p><h3 id="como-resolver-o-problema-n1">Como Resolver o Problema N+1:</h3><ol><li><strong>Eager Loading (Carregamento Antecipado)</strong>: Modificar a consulta para carregar os dados relacionados de uma vez. Muitos frameworks de ORM suportam "eager loading" para resolver o problema N+1. Por exemplo:sqlCopy code<code>SELECT a.*, b.*<br>FROM</code> Authors a<br><code>LEFT JOIN Books b ON a.id =</code> b.author_id;<br>Isso recupera todos os autores e seus livros em uma única consulta.</li><li><strong>Batch Fetching (Recuperação em Lotes)</strong>: Em vez de recuperar cada conjunto de dados relacionado separadamente, agrupar as consultas para reduzir o número total de consultas. Alguns ORMs suportam a recuperação em lotes.</li><li><strong>Subconsultas</strong>: Usar subconsultas para carregar os dados necessários em uma consulta única. Por exemplo:sqlCopy code<code>SELECT a.*</code>, <br><code>       (SELECT GROUP_CONCAT(b.title) FROM Books b WHERE b.author_id = a.id) as</code> books<br><code>FROM</code> Authors a;<br></li></ol><h3 id="exemplos-em-frameworks-de-orm">Exemplos em Frameworks de ORM:</h3><ul><li><strong>Hibernate (Java)</strong>:javaCopy codeList&lt;Author&gt; authors = session.createCriteria(Author.class)<br><code>                              .setFetchMode("books"</code>, FetchMode.JOIN)<br>                              .list();<br></li><li><strong>Django (Python)</strong>:pythonCopy code<code>authors = Author.objects.prefetch_related('books'</code>)<br></li><li><strong>ActiveRecord (Ruby on Rails)</strong>:rubyCopy code<code>authors = Author.includes(:books</code>)<br></li></ul><h3 id="conclus%C3%A3o">Conclusão:</h3><p>O problema N+1 é um desafio comum ao trabalhar com relações em bancos de dados, especialmente ao usar ORMs. A solução geralmente envolve técnicas como eager loading, batch fetching, ou a utilização de subconsultas para otimizar o número de consultas ao banco de dados e melhorar o desempenho da aplicação.</p>
+    </div>
+
+    <div class="gh-canvas">
+    <footer class="single-footer">
+
+        <div class="single-footer-left">
+            <div class="navigation navigation-previous">
+                <a class="navigation-link" href="/o-que-sao-transacoes-em-banco-de-dados/" aria-label="Previous post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+        <div class="single-footer-middle">
+        </div>
+
+        <div class="single-footer-right">
+            <div class="navigation navigation-next">
+                <a class="navigation-link" href="/normalizacao-em-bancos-de-dados/" aria-label="Next post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M5.333 14.667v2.667h16L14 24.667l1.893 1.893L26.453 16 15.893 5.44 14 7.333l7.333 7.333h-16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+</article>
+            <section class="related-wrapper gh-canvas">
+        <h3 class="related-title">You might also like...</h3>
+        <div class="related-feed">
+                <article class="feed public post no-image">
+
+    <h2 class="feed-title">Normalização em Bancos de Dados</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/normalizacao-em-bancos-de-dados/" aria-label="Normalização em Bancos de Dados"></a>
+
+</article>                <article class="feed public post no-image">
+
+    <h2 class="feed-title">O que são transações em Banco de Dados?</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/o-que-sao-transacoes-em-banco-de-dados/" aria-label="O que são transações em Banco de Dados?"></a>
+
+</article>                <article class="feed public post no-image">
+
+    <h2 class="feed-title">O que é ACID em Banco de Dados?</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/acid/" aria-label="O que é ACID em Banco de Dados?"></a>
+
+</article>                <article class="feed public post no-image">
+
+    <h2 class="feed-title">Padrões de Projeto - Template Method</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/padroes-de-projeto-template-method/" aria-label="Padrões de Projeto - Template Method"></a>
+
+</article>                <article class="feed public post no-image">
+
+    <h2 class="feed-title">Padrões de Projeto - Strategy</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/padroes-de-projeto-strategy/" aria-label="Padrões de Projeto - Strategy"></a>
+
+</article>        </div>
+    </section>
+
+        
+</main>
+    </div>
+
+    <footer class="gh-foot no-menu gh-outer">
+        <div class="gh-foot-inner gh-inner">
+            <div class="gh-copyright">
+                Matheus Gustavo © 2024
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src='/assets/built/main.min.js?v=bd5a27b057'></script>
+<script defer="" src="https://kit.fontawesome.com/c3e419eb8f.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
