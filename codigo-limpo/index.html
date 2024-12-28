@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Código Limpo</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=5355399942">
+
+    <meta name="description" content="Dicas para diminuir a quantidade de &quot;What the Fuck por minuto&quot; em seu código.">
+    <link rel="icon" href="https://www.matheusgustavo.com.br/content/images/size/w256h256/2024/01/perfil-1.jpeg" type="image/jpeg">
+    <link rel="canonical" href="https://www.matheusgustavo.com.br/codigo-limpo/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Matheus Gustavo">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Código Limpo">
+    <meta property="og:description" content="Dicas para diminuir a quantidade de &quot;What the Fuck por minuto&quot; em seu código.">
+    <meta property="og:url" content="https://www.matheusgustavo.com.br/codigo-limpo/">
+    <meta property="og:image" content="https://static.ghost.org/v5.0.0/images/publication-cover.jpg">
+    <meta property="article:published_time" content="2024-01-23T20:20:00.000Z">
+    <meta property="article:modified_time" content="2024-02-02T12:00:56.000Z">
+    <meta property="article:tag" content="Sobre Tecnologia">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/ghost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Código Limpo">
+    <meta name="twitter:description" content="Dicas para diminuir a quantidade de &quot;What the Fuck por minuto&quot; em seu código.">
+    <meta name="twitter:url" content="https://www.matheusgustavo.com.br/codigo-limpo/">
+    <meta name="twitter:image" content="https://static.ghost.org/v5.0.0/images/publication-cover.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Matheus Gustavo">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Sobre Tecnologia">
+    <meta name="twitter:site" content="@ghost">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="840">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Matheus Gustavo",
+        "url": "https://www.matheusgustavo.com.br/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.matheusgustavo.com.br/content/images/size/w256h256/2024/01/perfil-1.jpeg",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Matheus Gustavo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.gravatar.com/avatar/ef52ec319e8e33f9b1a7c7e045c5a12e?s=250&r=x&d=mp",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://www.matheusgustavo.com.br/author/matheus/",
+        "sameAs": []
+    },
+    "headline": "Código Limpo",
+    "url": "https://www.matheusgustavo.com.br/codigo-limpo/",
+    "datePublished": "2024-01-23T20:20:00.000Z",
+    "dateModified": "2024-02-02T12:00:56.000Z",
+    "keywords": "Sobre Tecnologia",
+    "description": "Dicas para diminuir a quantidade de &quot;What the Fuck por minuto&quot; em seu código.",
+    "mainEntityOfPage": "https://www.matheusgustavo.com.br/codigo-limpo/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.105">
+    <link rel="alternate" type="application/rss+xml" title="Matheus Gustavo" href="https://www.matheusgustavo.com.br/rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/sodo-search.min.js" data-key="22ee5a86e3470c44dca2f21f4c" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.5/umd/main.css" data-sodo-search="https://www.matheusgustavo.com.br/" data-locale="pt-br" crossorigin="anonymous"></script>
+    
+    <link href="https://www.matheusgustavo.com.br/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=5355399942"></script><style>:root {--ghost-accent-color: #FF1A75;}</style>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=5355399942">
+</head>
+
+<body class='post-template tag-sobre-tecnologia is-head-left-logo has-serif-body'>
+<div class="site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="https://www.matheusgustavo.com.br">
+                            Matheus Gustavo
+                    </a>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-sobre-mim"><a href="https://www.matheusgustavo.com.br/sobre-mim/">Sobre mim</a></li>
+    <li class="nav-sobre-tecnologia"><a href="https://www.matheusgustavo.com.br/tag/sobre-tecnologia/">Sobre Tecnologia</a></li>
+    <li class="nav-sobre-pessoas"><a href="https://www.matheusgustavo.com.br/tag/sobre-pessoas/">Sobre Pessoas</a></li>
+    <li class="nav-sobre-livros"><a href="https://www.matheusgustavo.com.br/tag/sobre-livros/">Sobre Livros</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="site-content">
+        
+<main class="site-main">
+
+        <article class="single post tag-sobre-tecnologia no-image">
+
+        <header class="single-header gh-canvas">
+            <div class="single-meta">
+                    <span class="single-meta-item single-meta-length">
+                        4 min read
+                    </span>
+                    <span class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-sobre-tecnologia" href="/tag/sobre-tecnologia/">
+                            Sobre Tecnologia
+                        </a>
+                    </span>
+            </div>
+
+            <h1 class="single-title">Código Limpo</h1>
+
+                <div class="single-excerpt">
+                    Dicas para diminuir a quantidade de &quot;What the Fuck por minuto&quot; em seu código.
+                </div>
+
+
+        </header>
+
+    <div class="single-content gh-content gh-canvas">
+        <p>No início do livro "Clean Code", de "Robert C. Martin" existe a seguinte frase:</p><blockquote>A única forma de se medir a qualidade de um código é a&nbsp;<strong>What the Fuck por minuto</strong>.</blockquote><h2 id="problemas-de-um-c%C3%B3digo-sujo">Problemas de um código sujo:</h2><ul><li>Custo para evolução e manutenção do código crescendo exponencialmente conforme a base de código aumenta, com muito tempo despendido em refatorações que não geram valor ao sistema, e em algum momento, o desejo de uma reescrita total do sistema.</li><li>Estresse, desânimo, baixa performance, trabalho em excesso, ansiedade, e no limite, o&nbsp;<a href="https://www.agiledrop.com/blog/burnout-symptoms-developer-burnout-ways-tackle-it?ref=localhost">burnout</a>&nbsp;dos desenvolvedores.</li><li>Risco elevado de efeitos colaterais (bugs) para cada modificação no código, que afetam o usuário final do sistema, podendo levar ao fracasso de um projeto num mundo digital onde as pessoas tem uma alta expectativa sobre a usabilidade e disponibilidade das aplicações que interagem em seus diversos dispositivos.</li></ul><h2 id="aqui-est%C3%A3o-algumas-boas-pr%C3%A1ticas-para-escrever-c%C3%B3digo-limpo">Aqui estão algumas boas práticas para escrever código limpo:</h2><h3 id="automatize-e-use-padr%C3%B5es">Automatize e use padrões:</h3><p>Utilize padrões e ferramentas de análise estática de código para garantir a consistência e qualidade do código.<br>Automatize as verificações de padrões de código e inclua revisões de código como parte do processo de desenvolvimento.</p><h3 id="nomes-s%C3%A3o-muito-importantes">Nomes são muito importantes:</h3><p>Escolha nomes significativos para variáveis, funções, classes, módulos e outros elementos do código.<br>Priorize nomes claros e descritivos que reflitam o propósito e a função do elemento.</p><h3 id="fun%C3%A7%C3%B5es-devem-ser-pequenas">Funções devem ser pequenas:</h3><p>Evite funções longas e divida-as em funções menores com responsabilidades claras.<br>Limite o número de parâmetros em uma função para evitar complexidade excessiva.</p><h3 id="comente-apenas-o-necess%C3%A1rio">Comente apenas o necessário:</h3><p>Escreva código legível e autoexplicativo que não exija muitos comentários.<br>Utilize comentários para explicar partes complexas do código, regex, operações matemáticas difíceis ou exceções em regras de negócio.</p><h3 id="mantenha-um-padr%C3%A3o-de-formata%C3%A7%C3%A3o">Mantenha um padrão de formatação:</h3><p>Estabeleça convenções e diretrizes claras de formatação de código para garantir consistência em toda a base de código.<br>Evite estilos de formatação divergentes e padronize o código para facilitar a leitura e manutenção.</p><h3 id="seja-o-verdadeiro-autor-do-c%C3%B3digo">Seja o verdadeiro autor do código:</h3><p>Escreva código com cuidado e atenção, demonstrando preocupação com a qualidade.<br>Deixe seu código limpo e legível para que outros possam entender e dar continuidade a ele.</p><h3 id="dry-dont-repeat-yourself">DRY (Don't Repeat Yourself):</h3><p>Evite repetição de código para reduzir a probabilidade de bugs e melhorar a manutenibilidade.<br>Utilize abordagens como compartilhamento de código, modularização e reuso para evitar duplicação.</p><h3 id="testes-automatizados-limpos">Testes automatizados limpos:</h3><p>Aplique os mesmos princípios de código limpo aos testes automatizados.<br>Escreva testes claros e organizados para facilitar a leitura e manutenção.</p><h3 id="a-regra-do-escoteiro">A regra do escoteiro:</h3><p>Mantenha o código mais limpo do que você o encontrou, evitando deixar rastros de código desnecessário ou mal organizado.<br>Lembrando que essas são apenas algumas boas práticas para escrever código limpo, e é importante adaptá-las ao contexto e às necessidades do projeto.</p><h3 id="evite-a-complexidade-excessiva">Evite a complexidade excessiva:</h3><p>Mantenha o código simples e evite a complexidade desnecessária.<br>Divida problemas complexos em partes menores e mais gerenciáveis.<br>Evite aninhamento excessivo de estruturas condicionais (if-else) e loops.</p><h3 id="teste-e-refatore-regularmente">Teste e refatore regularmente:</h3><p>Escreva testes unitários para verificar o comportamento correto do código.<br>Refatore o código regularmente para melhorar a estrutura, legibilidade e desempenho.<br>Testes automatizados e refatoração contínua ajudam a manter o código limpo e robusto.</p><h3 id="princ%C3%ADpio-da-responsabilidade-%C3%BAnica-single-responsibility-principlesrp">Princípio da Responsabilidade Única (Single Responsibility Principle - SRP):</h3><p>Cada classe ou função deve ter apenas uma responsabilidade claramente definida.<br>Isso ajuda a manter o código mais coeso, facilita a compreensão e a manutenção.</p><h3 id="princ%C3%ADpio-aberto-fechado-open-closed-principleocp">Princípio Aberto-Fechado (Open-Closed Principle - OCP):</h3><p>As entidades de software (classes, módulos, etc.) devem ser abertas para extensão, mas fechadas para modificação.<br>Isso significa que o código deve ser projetado de forma que seja fácil adicionar novos recursos ou comportamentos sem alterar o código existente.</p><h3 id="princ%C3%ADpio-da-invers%C3%A3o-de-depend%C3%AAncia-dependency-inversion-principledip">Princípio da Inversão de Dependência (Dependency Inversion Principle - DIP):</h3><p>Os módulos de alto nível não devem depender diretamente de módulos de baixo nível, ambos devem depender de abstrações.<br>Isso promove um acoplamento mais fraco e facilita a substituição de implementações sem afetar outras partes do código.</p><h2 id="vantagens-em-se-ter-um-c%C3%B3digo-limpo">Vantagens em se ter um código limpo:</h2><h3 id="legibilidade-e-compreens%C3%A3o">Legibilidade e compreensão:</h3><p>Um código limpo é mais fácil de ler e entender. As boas práticas de nomenclatura, estruturação e formatação tornam o código mais claro e legível, permitindo que desenvolvedores e membros da equipe compreendam mais facilmente o que está acontecendo.</p><h3 id="manutenibilidade">Manutenibilidade:</h3><p>Código limpo é mais fácil de manter e atualizar ao longo do tempo. Quando o código é organizado de forma coesa e bem estruturada, as modificações e correções de bugs podem ser feitas de maneira mais eficiente, reduzindo o tempo e o esforço necessários para realizar alterações.</p><h3 id="facilidade-de-colabora%C3%A7%C3%A3o">Facilidade de colaboração:</h3><p>Um código limpo facilita a colaboração em equipe. Quando o código é legível e segue convenções e padrões comuns, os membros da equipe podem trabalhar juntos de forma mais eficaz, revisar o código uns dos outros e entender o trabalho realizado por colegas.</p><h3 id="redu%C3%A7%C3%A3o-de-bugs">Redução de bugs:</h3><p>Código limpo reduz a probabilidade de introdução de erros e bugs. A clareza e a organização do código tornam mais fácil identificar possíveis problemas e facilitam a depuração e o teste.</p><h3 id="escalabilidade">Escalabilidade:</h3><p>Um código limpo é mais fácil de escalar e evoluir. Quando o código é estruturado de forma modular e bem organizada, a adição de novos recursos ou funcionalidades se torna mais simples e menos propensa a causar efeitos colaterais indesejados.</p><h3 id="performance-e-efici%C3%AAncia">Performance e eficiência:</h3><p>Um código limpo pode ter um desempenho melhor. O código bem escrito e otimizado é mais eficiente, evitando práticas desnecessárias ou ineficientes que possam afetar o desempenho do aplicativo.</p><h3 id="reutiliza%C3%A7%C3%A3o-de-c%C3%B3digo">Reutilização de código:</h3><p>Um código limpo promove a reutilização de código. Quando o código é modular e bem organizado, é mais fácil identificar e extrair partes reutilizáveis, economizando tempo e esforço ao desenvolver novos recursos ou projetos.</p><h3 id="satisfa%C3%A7%C3%A3o-e-orgulho">Satisfação e orgulho:</h3><p>Código limpo pode aumentar a satisfação do desenvolvedor e promover um senso de orgulho no trabalho realizado. Um código bem escrito e limpo reflete um alto nível de profissionalismo e habilidade técnica.</p><p>Em resumo, um código limpo traz benefícios significativos para os desenvolvedores, as equipes de desenvolvimento e os projetos em geral, resultando em um desenvolvimento mais eficiente, manutenção simplificada e maior qualidade do software.</p><p>Grande abraço!&nbsp;</p><p>&nbsp;<strong>Para saber mais:</strong></p><ul><li><a href="https://www.amazon.com.br/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=asc_df_0132350882/?tag=googleshopp00-20&amp;linkCode=df0&amp;hvadid=379787788238&amp;hvpos=&amp;hvnetw=g&amp;hvrand=13289082428637734770&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1001729&amp;hvtargid=pla-435472505264&amp;psc=1&amp;ref=localhost">Clean Code: A Handbook of Agile Software Craftsmanship</a></li></ul>
+    </div>
+
+    <div class="gh-canvas">
+    <footer class="single-footer">
+
+        <div class="single-footer-left">
+            <div class="navigation navigation-previous">
+                <a class="navigation-link" href="/o-basico-sobre-rest-apis/" aria-label="Previous post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+        <div class="single-footer-middle">
+        </div>
+
+        <div class="single-footer-right">
+            <div class="navigation navigation-next">
+                <a class="navigation-link" href="/rincipios-first-para-testes-de-unidade/" aria-label="Next post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M5.333 14.667v2.667h16L14 24.667l1.893 1.893L26.453 16 15.893 5.44 14 7.333l7.333 7.333h-16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+</article>
+            <section class="related-wrapper gh-canvas">
+        <h3 class="related-title">You might also like...</h3>
+        <div class="related-feed">
+                <article class="feed public post no-image">
+
+    <h2 class="feed-title">Problema N+1 (Banco de Dados)</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            2 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/problema-n-1-banco-de-dados/" aria-label="Problema N+1 (Banco de Dados)"></a>
+
+</article>                <article class="feed public post no-image">
+
+    <h2 class="feed-title">O que são transações em Banco de Dados?</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/o-que-sao-transacoes-em-banco-de-dados/" aria-label="O que são transações em Banco de Dados?"></a>
+
+</article>                <article class="feed public post no-image">
+
+    <h2 class="feed-title">O que é ACID em Banco de Dados?</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/o-que-e-acid-em-banco-de-dados/" aria-label="O que é ACID em Banco de Dados?"></a>
+
+</article>                <article class="feed public post no-image">
+
+    <h2 class="feed-title">Padrões de Projeto - Template Method</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/padroes-de-projeto-template-method/" aria-label="Padrões de Projeto - Template Method"></a>
+
+</article>                <article class="feed public post no-image">
+
+    <h2 class="feed-title">Padrões de Projeto - Strategy</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/padroes-de-projeto-strategy/" aria-label="Padrões de Projeto - Strategy"></a>
+
+</article>        </div>
+    </section>
+
+        
+</main>
+    </div>
+
+    <footer class="gh-foot no-menu gh-outer">
+        <div class="gh-foot-inner gh-inner">
+            <div class="gh-copyright">
+                Matheus Gustavo © 2024
+            </div>
+            <div class="gh-powered-by">
+                <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src='/assets/built/main.min.js?v=5355399942'></script>
+<script defer="" src="https://kit.fontawesome.com/c3e419eb8f.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
