@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="theme-dark" lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Big (O)</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=68270d31f6">
+
+    <link rel="icon" href="https://www.matheusgustavo.com.br/content/images/size/w256h256/2024/01/perfil-1.jpeg" type="image/jpeg">
+    <link rel="canonical" href="https://www.matheusgustavo.com.br/big-o/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Matheus Gustavo">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Big (O)">
+    <meta property="og:description" content="A notação Big O (O) é usada para descrever a complexidade de tempo de um algoritmo, expressando como o tempo de execução cresce à medida que o tamanho dos dados de entrada aumenta. Ela fornece uma forma padronizada de comparar e classificar a eficiência de diferentes algoritmos.
+
+A notação Big">
+    <meta property="og:url" content="https://www.matheusgustavo.com.br/big-o/">
+    <meta property="og:image" content="https://static.ghost.org/v5.0.0/images/publication-cover.jpg">
+    <meta property="article:published_time" content="2024-01-24T20:08:37.000Z">
+    <meta property="article:modified_time" content="2025-09-16T09:49:51.000Z">
+    <meta property="article:tag" content="Conceitos Técnicos">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/ghost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Big (O)">
+    <meta name="twitter:description" content="A notação Big O (O) é usada para descrever a complexidade de tempo de um algoritmo, expressando como o tempo de execução cresce à medida que o tamanho dos dados de entrada aumenta. Ela fornece uma forma padronizada de comparar e classificar a eficiência de diferentes algoritmos.
+
+A notação Big">
+    <meta name="twitter:url" content="https://www.matheusgustavo.com.br/big-o/">
+    <meta name="twitter:image" content="https://static.ghost.org/v5.0.0/images/publication-cover.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Matheus Gustavo">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Conceitos Técnicos">
+    <meta name="twitter:site" content="@ghost">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="840">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Matheus Gustavo",
+        "url": "https://www.matheusgustavo.com.br/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.matheusgustavo.com.br/content/images/size/w256h256/2024/01/perfil-1.jpeg",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Matheus Gustavo",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.gravatar.com/avatar/ef52ec319e8e33f9b1a7c7e045c5a12e?s=250&r=x&d=mp",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://www.matheusgustavo.com.br/author/matheus/",
+        "sameAs": []
+    },
+    "headline": "Big (O)",
+    "url": "https://www.matheusgustavo.com.br/big-o/",
+    "datePublished": "2024-01-24T20:08:37.000Z",
+    "dateModified": "2025-09-16T09:49:51.000Z",
+    "keywords": "Conceitos Técnicos",
+    "description": "A notação Big O (O) é usada para descrever a complexidade de tempo de um algoritmo, expressando como o tempo de execução cresce à medida que o tamanho dos dados de entrada aumenta. Ela fornece uma forma padronizada de comparar e classificar a eficiência de diferentes algoritmos.\n\nA notação Big O representa uma estimativa superior do tempo de execução, ou seja, descreve o pior caso possível em termos de desempenho. Ela se concentra nos fatores dominantes que influenciam o crescimento do tempo de ",
+    "mainEntityOfPage": "https://www.matheusgustavo.com.br/big-o/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 6.0">
+    <link rel="alternate" type="application/rss+xml" title="Matheus Gustavo" href="https://www.matheusgustavo.com.br/rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/sodo-search.min.js" data-key="22ee5a86e3470c44dca2f21f4c" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/main.css" data-sodo-search="https://www.matheusgustavo.com.br/" data-locale="pt-br" crossorigin="anonymous"></script>
+    
+    <link href="https://www.matheusgustavo.com.br/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=68270d31f6"></script><style>:root {--ghost-accent-color: #FF1A75;}</style>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=68270d31f6">
+</head>
+
+<body class='post-template tag-conceitos-tecnicos is-head-left-logo has-serif-body'>
+<div class="site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <a class="gh-head-logo" href="https://www.matheusgustavo.com.br">
+                            Matheus Gustavo
+                    </a>
+                </div>
+                <!--<button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>-->
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-conceitos-tecnicos"><a href="https://www.matheusgustavo.com.br/tag/conceitos-tecnicos/">Conceitos Técnicos</a></li>
+    <li class="nav-sobre-pessoas"><a href="https://www.matheusgustavo.com.br/tag/sobre-pessoas/">Sobre Pessoas</a></li>
+    <li class="nav-bem-estar"><a href="https://www.matheusgustavo.com.br/tag/bem-estar/">Bem Estar</a></li>
+    <li class="nav-sobre-mim"><a href="https://www.matheusgustavo.com.br/sobre-mim/">Sobre mim</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                        <!--<button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>-->
+            </div>
+        </div>
+    </header>
+
+
+    <div class="site-content">
+        
+<main class="site-main">
+
+        <article class="single post tag-conceitos-tecnicos featured no-image">
+
+        <header class="single-header gh-canvas">
+            <div class="single-meta">
+                    <span class="single-meta-item single-meta-length">
+                        2 min read
+                    </span>
+                    <span class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-conceitos-tecnicos" href="/tag/conceitos-tecnicos/">
+                            Conceitos Técnicos
+                        </a>
+                    </span>
+            </div>
+
+            <h1 class="single-title">Big (O)</h1>
+
+
+
+        </header>
+
+    <div class="single-content gh-content gh-canvas">
+        <p>A <strong>notação Big O</strong> (O) é usada para descrever a <strong>complexidade de tempo</strong> de um algoritmo, expressando como o tempo de execução cresce à medida que o tamanho dos dados de entrada aumenta. Ela fornece uma forma padronizada de <strong>comparar e classificar a eficiência</strong> de diferentes algoritmos.</p><p>A notação Big O representa uma <strong>estimativa superior</strong> do tempo de execução, ou seja, descreve o <strong>pior caso possível</strong> em termos de desempenho. Ela se concentra nos <strong>fatores dominantes</strong> que influenciam o crescimento do tempo de execução, ignorando constantes e termos de menor ordem.</p><p>Por exemplo:</p><ul><li><code>O(n)</code> indica um tempo de execução <strong>linear</strong>, onde o tempo cresce proporcionalmente ao tamanho da entrada.</li><li><code>O(n²)</code> indica um tempo <strong>quadrático</strong>, onde o tempo de execução cresce com o <strong>quadrado do tamanho da entrada</strong>.</li></ul><p>É importante notar que a notação Big O <strong>não fornece o tempo real de execução</strong>, mas sim uma <strong>estimativa teórica</strong> que ajuda a comparar algoritmos com base em seu comportamento assintótico.</p><p><strong>Tipos de Complexidade de Tempo (Notação Big O)</strong></p><p>De modo geral, algoritmos com <strong>complexidade de tempo menor</strong> (como <code>O(1)</code> ou <code>O(log n)</code>) são considerados <strong>mais eficientes</strong> do que aqueles com complexidade maior (como <code>O(n)</code> ou <code>O(n²)</code>), especialmente para grandes volumes de dados.</p><p><strong>Tempo constante – O(1):</strong> O tempo de execução é independente do tamanho dos dados de entrada. Isso significa que, não importa se a entrada tem 10 ou 1.000.000 de elementos, o tempo necessário para executar a operação permanece o mesmo. Um exemplo clássico é o acesso direto a um elemento de um array.</p><p><strong>Tempo linear – O(n):</strong> O tempo de execução cresce proporcionalmente ao tamanho da entrada. Ou seja, se o número de elementos na entrada dobra, o tempo de execução também dobra. Um exemplo típico é percorrer uma lista com um único loop.</p><p><strong>Tempo logarítmico – O(log n):</strong> A cada iteração, o tamanho do problema é reduzido, geralmente pela metade. Isso torna o algoritmo extremamente eficiente mesmo com entradas grandes. Um bom exemplo é a busca binária em uma lista ordenada.</p><p><strong>Tempo quadrático – O(n²):</strong> O tempo de execução cresce proporcional ao quadrado do tamanho da entrada. Esse tipo de complexidade é comum em algoritmos com loops aninhados, como o bubble sort ou o selection sort. Se a entrada dobra, o tempo de execução pode quadruplicar.</p><p><strong>Tempo exponencial – O(2ⁿ):</strong> O tempo de execução dobra a cada novo elemento na entrada. Algoritmos com essa complexidade geralmente exploram todas as combinações possíveis, como ocorre em abordagens de força bruta para problemas de otimização, como o problema da mochila.</p><p><strong>Tempo fatorial – O(n!):</strong> O tempo de execução cresce de forma extremamente rápida, seguindo o crescimento fatorial do tamanho da entrada. Esse tipo de complexidade é típico de algoritmos que geram todas as permutações possíveis de um conjunto, como no problema do caixeiro viajante. Na prática, torna-se inviável para entradas com <code>n</code> maior do que 15 ou 20.</p>
+<!--kg-card-begin: html-->
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Complexidade</th>
+        <th>Nome</th>
+        <th>Escalabilidade</th>
+        <th>Exemplo típico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>O(1)</td>
+        <td>Constante</td>
+        <td>🔹 Excelente</td>
+        <td>Acesso direto a array</td>
+      </tr>
+      <tr>
+        <td>O(log n)</td>
+        <td>Logarítmica</td>
+        <td>🔹 Muito boa</td>
+        <td>Busca binária</td>
+      </tr>
+      <tr>
+        <td>O(n)</td>
+        <td>Linear</td>
+        <td>⚪ Moderada</td>
+        <td>Loop simples</td>
+      </tr>
+      <tr>
+        <td>O(n²)</td>
+        <td>Quadrática</td>
+        <td>🔸 Ineficiente</td>
+        <td>Bubble sort, seleção</td>
+      </tr>
+      <tr>
+        <td>O(2ⁿ)</td>
+        <td>Exponencial</td>
+        <td>🔴 Muito ruim</td>
+        <td>Problema da mochila</td>
+      </tr>
+      <tr>
+        <td>O(n!)</td>
+        <td>Fatorial</td>
+        <td>🔴 Praticamente inviável</td>
+        <td>Permutações, TSP</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- CSS -->
+<style>
+.gh-content table:not(.gist table) td:first-child {
+    background-image: unset;
+    background-repeat: unset;
+    background-size: unset;
+}
+
+  .gh-content table:not(.gist table) td:last-child {
+    background-image: unset;
+    background-position: unset;
+    background-repeat: unset;
+    background-size: unset;
+}
+
+  .gh-content table:not(.gist table) {
+    background: unset;
+}
+</style>
+<!--kg-card-end: html-->
+<p>&nbsp;<strong>Para saber mais:</strong></p><ul><li><a href="https://towardsdatascience.com/big-o-d13a8b1068c8?ref=localhost">Towards Data Science</a></li><li><a href="https://codility.com/media/train/1-TimeComplexity.pdf?ref=localhost">Codilify</a></li></ul>
+    </div>
+
+    <div class="gh-canvas">
+    <footer class="single-footer">
+
+        <div class="single-footer-left">
+            <div class="navigation navigation-previous">
+                <a class="navigation-link" href="/rest-apis/" aria-label="Previous post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+        <div class="single-footer-middle">
+        </div>
+
+        <div class="single-footer-right">
+            <div class="navigation navigation-next">
+                <a class="navigation-link" href="/soft-skill-comportameto-amigavel/" aria-label="Next post">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon navigation-icon">
+    <path d="M5.333 14.667v2.667h16L14 24.667l1.893 1.893L26.453 16 15.893 5.44 14 7.333l7.333 7.333h-16z"></path>
+</svg>                </a>
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+</article>
+            <section class="related-wrapper gh-canvas">
+        <h3 class="related-title">Você também pode gostar...</h3>
+        <div class="related-feed">
+                <article class="feed public post featured no-image">
+
+    <h2 class="feed-title">REST APIs</h2>
+
+    <div class="feed-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon icon-star">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>        <div class="feed-length">
+            1 min read
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="icon feed-icon">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>
+    <a class="u-permalink" href="/rest-apis/" aria-label="REST APIs"></a>
+
+</article>        </div>
+    </section>
+
+        
+</main>
+    </div>
+
+    <footer class="gh-foot no-menu gh-outer">
+        <div class="gh-foot-inner gh-inner">
+            <div class="gh-copyright">
+                Matheus Gustavo © 2025
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src='/assets/built/main.min.js?v=68270d31f6'></script>
+<script defer="" src="https://kit.fontawesome.com/c3e419eb8f.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
